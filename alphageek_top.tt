@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <link rel=stylesheet href=css/inuit.css>
+    <title>Learn from AlphaGeeks</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33909767-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<style type="text/css">
+
+li.tile{
+	display: inline-block;
+	margin: 0;
+	padding: 5px 10px;
+	border: 1px solid #cccccc;
+	list-style-tyle: none;
+	max-width: 100px;
+	max-height: 100px;
+}
+
+@media only screen and (min-width: 480px) { 
+ul.tile{
+	margin: 0;
+	padding: 20px 0;
+	text-align: center;
+	width: 375px;
+}
+}
+
+@media only screen and (min-width: 768px) { 
+
+ul.tile{
+	margin: 0;
+	padding: 20px 0;
+	text-align: center;
+	width: 750px;
+}
+}
+
+@media only screen and (min-width: 1024px) { 
+
+ul.tile{
+	margin: 0;
+	padding: 20px 0;
+	text-align: center;
+	width: 1000px;
+}
+}
+</style>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--> 
+
+<!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+</script>
+<![endif]-->
+
+</head>
+<body>
+
+<h1>CPAN Top 100</h1>
+
+<ul class="tile">
+  <li class="tile"><a href="./alphageek_top100_heavy.html">Heavy</a></li>
+  <li class="tile"><a href="./alphageek_top100_volatile.html">Volatile</a></li>
+  <li class="tile"><a href="./alphageek_top100_debian.html">Debian</a></li>
+  <li class="tile"><a href="./alphageek_top100_downstream.html">Downstream</a></li>
+  <li class="tile"><a href="./alphageek_top100_meta1.html">Meta1</a></li>
+  <li class="tile"><a href="./alphageek_top100_meta2.html">Meta2</a></li>
+  <li class="tile"><a href="./alphageek_top100_meta3.html">Meta3</a></li>
+  <li class="tile"><a href="./alphageek_top100_fail.html">Fail</a></li>
+</ul>
+
+<br>
+<h1>Acme::CPANAuthors</h1>
+
+<ul class="tile">
+[% FOREACH category = categories -%]
+  <li class="tile"><a href="./alphageek_[% category.category  %].html"><img src="./flags/[% category.country %].gif" alt="[% category.country %]"></a><br>[% category.category  %]([% category.count  %])</li>
+[% END %]
+</ul>
+
+<iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=thickbeard-22&o=9&p=16&l=st1&mode=books-jp&search=Perl&fc1=000000&lt1=_blank&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="468" height="336" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+
+<br>
+
+<footer>
+Update DateTime:[% update_date %] (GMT +09:00)
+</footer>
+</body>
+</html>

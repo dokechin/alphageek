@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <link rel=stylesheet href=css/inuit.css>
+    <title>Learn from AlphaGeeks ([% category %])</title>
+<script type="text/javascript" src="./script/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="./script/jquery.tablesorter.min.js"></script>
+<link href="./css/tablesorter/style.css" media="screen" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+
+  $(document).ready(function()
+    {
+      $("#alphaGeekTable").tablesorter();
+    }
+  );
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33909767-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body>
+<h1>Learn from AlphaGeeks ([% category %])</h1>
+<table id="alphaGeekTable" class="tablesorter">
+<thead>
+<tr>
+<th>Name</th><th>CPAN dists</th><th>GitHub pub_gists</th><th>SlideShare</th><th>HomePage</th><th>Blog</th><th>Hatena</th>
+</tr>
+</thead>
+<tbody>
+[% FOREACH person = persons -%]
+<tr>
+<td>[% person.name | html %]</td>
+[% IF person.id %]<td><a href="http://search.cpan.org/~[% person.id | uri %]" target="_blank">[% person.distributions_count %]</a></td>[% END %]
+[% IF person.github_url %]<td><a href="[% person.github_url %]" target="_blank">[% person.public_gists %]</a></td>
+[% ELSE %]<td></td>
+[% END %]
+[% IF person.slideshare_id %]<td><a href="http://www.slideshare.net/[% person.slideshare_id | uri %]/presentations" target="_blank">[% person.slideshare_count %]</a></td>
+[% ELSE %]<td></td>
+[% END %]
+[% IF person.homepage_url %]<td><a href="[% person.homepage_url %]" target="_blank">[% person.homepage_title %]</a></td>
+[% ELSE %]<td></td>
+[% END %]
+[% IF person.blog_url %]<td><a href="[% person.blog_url %]" target="_blank">[% person.blog_title %]</a></td>
+[% ELSE %]<td></td>
+[% END %]
+[% IF person.hatena_url %]<td><a href="[% person.hatena_url %]" target="_blank">[% person.hatena_count %]</a></td>
+[% ELSE %]<td></td>
+[% END %]
+[% END -%]
+</tbody>
+</table>
+[% IF widget %][% widget %][% END %]
+</body>
+</html>
